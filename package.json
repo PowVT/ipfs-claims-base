@@ -1,18 +1,23 @@
 {
   "name": "ipfs-claims",
   "version": "1.0.0",
-  "description": "Validate claims data stored on IPFS",
+  "description": "Validate Adaptive Resources claim token data stored on IPFS",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "node test"
+    "test-getClaimData": "node test/getClaimData.js",
+    "test-riskManagement": "node test/riskManagement.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PowVT/ipfs-claims.git"
   },
   "keywords": [
-    "ipfs"
+    "ipfs",
+    "claims",
+    "adaptive",
+    "resources",
+    "defi"
   ],
   "author": "PowVT",
   "license": "MIT",
@@ -22,7 +27,9 @@
   "homepage": "https://github.com/PowVT/ipfs-claims#readme",
   "dependencies": {
     "ipfs-core": "^0.12.2",
-    "node-fetch": "^3.1.0",
+    "node-fetch": "^3.1.0"
+  },
+  "devDependencies": {
     "tape": "^5.3.2"
   }
 }

@@ -7,7 +7,7 @@ It is important to run get claim data tests`npm test test/test-getClaimData.js`,
 
 ## Test Scripts
 - getClaimData.js
-- riskManagement.js
+- riskMitigation.js
 
 ### getClaimData.js
 - Test 1:
@@ -19,16 +19,17 @@ It is important to run get claim data tests`npm test test/test-getClaimData.js`,
     - Require specific cerificates depending on the claims country of origin.
     - Require claim creator to be pre-approved.
 
-### riskManagement.js
+### riskMitigation.js
 - Test 1:
     - Are beneficiaries in claim pre-approved?
-    - Is there one or more support directives recorded in claim?
-    - Is the directive approved for the beneficiary selected?
+    - Is there one or more support directive recorded in claim?
+    - Is the beneficiary approved to respond to the directives selected?
+    - 
 
-## test commands
+## Test commands
 ```
 npm run test-getClaimData
-npm test test/riskManagement.js
+npm run test-riskMitigation
 ```
 
 ## Maintainance

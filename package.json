@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test-getClaimData": "node test/getClaimData.js",
-    "test-riskManagement": "node test/riskManagement.js"
+    "test-riskMitigation": "node test/riskMitigation.js"
   },
   "repository": {
     "type": "git",

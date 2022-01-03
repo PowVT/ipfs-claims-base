@@ -22,4 +22,4 @@ export const directivesApprovedForBeneficiaries = {
     ugandaCooperative: ["", ""],
     mubendeHumanRights: ["", ""],
     kassandaChildrensAid: ["", ""]
-}
+} 

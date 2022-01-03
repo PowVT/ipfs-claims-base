@@ -120,7 +120,7 @@ export const getClaimData = async (hash) => {
             supportDirectives: supportDirectives,
             associatedAddresses: associatedAddresses
         }
-        // if claim data complete, then return data in the form of an object
+        // if claim data complete, then return data in the form of an object and create a local desktop file of the results. 
         if (
             claimData.hash &&
             claimData.commodity &&
@@ -132,8 +132,21 @@ export const getClaimData = async (hash) => {
             claimData.timestamp &&
             claimData.supportDirectives &&
             claimData.associatedAddresses) {
+            // Write results to desktop report
+            fs.writeFile("../Desktop/" + claimHash + ".txt", JSON.stringify(claimData), (err) => {
+                if (err)
+                    console.log(err);
+                else {
+                    console.log("\nClaim Data written successfully to user desktop.\n");
+                    //console.log("The written has the following contents:");
+                    //console.log(fs.readFileSync("../Desktop/" + claimHash + ".txt", "utf8"));
+                }
+            });
+
             return claimData
-        } else {
+        }
+
+        else {
             console.log("Claim Data is in unusual format.")
         }
         // if there is a message with type error that is returned from fetch, trigger console.error
@@ -143,17 +156,24 @@ export const getClaimData = async (hash) => {
 
 }
 
-// function length of data?
-
-// function total value?
-
-//FIX!!!
 // Write results to desktop report
-/*
-fs.readdir(folderPath, (err, files) => {
-    files.forEach(file => {
-        console.log(file);
+export const writeToDesktop = (claimHash, claimData) => {
+    /*
+    fs.readdir(folderPath, (err, files) => {
+        files.forEach(file => {
+            console.log(file);
+        });
     });
-});
+    */
+    fs.writeFile(claimHash + ".txt", claimData, (err) => {
+        if (err)
+            console.log(err);
+        else {
+            console.log("File written successfully\n");
+            console.log("The written has the following contents:");
+            console.log(fs.readFileSync(claimHash + ".txt", "utf8"));
+        }
+    });
+}
 
-*/
+
